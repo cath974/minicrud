@@ -234,14 +234,18 @@ const users =
         "bs": "target end-to-end models"
       }
     }
-  ]
+]
 
   const UsersListFixed = () => (
     <div>
-      {users.map(user => 
-        <User key={user.id} {...user} />
-      )}
+        <h3>with users in app</h3>
+        <div>
+          {users.map(user => 
+            <User key={user.id} {...user} />
+          )}
+        </div>
     </div>
+    
   );
 
 
