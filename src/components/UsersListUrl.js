@@ -10,7 +10,7 @@ export default class UsersListUrl extends React.Component {
     users: []
   }
 
-  componentDidMount() {
+  getUsers() {
     axios.get(`https://jsonplaceholder.typicode.com/users/`)
       .then(res => {
         const users = res.data;
