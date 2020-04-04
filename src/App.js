@@ -9,7 +9,6 @@ function App() {
         <UsersListFixed />
     </div>
     
-    </div>
   );
 }
 
