@@ -19,14 +19,26 @@ const Address = ({adr}) => (
   </div>
 );
 
-const User = ({ id, name, username, email, address}) => (
-  <div className="user">
+ const Button = ({ev}) => (
+  <button
+    id="btnDelete"
+    type="button"
+    className="btn"
+    onClick={ev}
+  >
+    Delete user
+  </button>
+);
+
+const User = ({ id, name, username, email, address, delEvent}) => (
+  <li className="user">
+      <Button ev={delEvent}/>
       <p>{id}</p>
       <p>{name}</p>
       <p>{username}</p>
       <p>{email}</p>
       <Address  adr={address} />   
-  </div>
+  </li>
 );
 
 export default User;
