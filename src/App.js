@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import User from './components/User';
 import axios from 'axios'; 
+import UserForm from './components/UserForm';
+
 import './App.css';
 // import UsersListFixed from './components/UsersListFixed';
-// import UsersListUrl from './components/UsersListUrl';
-
 
 class App extends Component {
   
@@ -25,6 +25,12 @@ class App extends Component {
         users.splice(index,1);
         this.setState({users:users})
       }
+
+      // addUser = (index,e) => {
+      //   const users = Object.assign([], this.state.users);
+      //   users.splice(index,0,"ff");
+      //   this.setState({users:users})
+      // }
   
   render() {
       return (
@@ -32,12 +38,13 @@ class App extends Component {
         <div className="App">
             {/* <UsersListFixed /> */}
             <div>
-                <h3>with users in api</h3>
+                <h3>Add a user</h3>
+                <UserForm />
                 <ul>
                 {this.state.users.map((user,index) =>{
-                    return(<User key={user.id} {...user}
+                    return(<User key={user.id}
                     delEvent={this.deleteUser.bind(this,index)}
-                 />)
+                {...user} />)
                   })
                 }
                 </ul>
